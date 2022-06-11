@@ -1,8 +1,8 @@
 {
-  "name": "antd",
-  "version": "4.17.0-alpha.9",
+  "name": "fui-bsse",
+  "version": "1.0.0",
   "description": "An enterprise-class UI design language and React components implementation",
-  "title": "Ant Design",
+  "title": "Fui-base",
   "keywords": [
     "ant",
     "component",
@@ -13,18 +13,6 @@
     "react",
     "react-component",
     "ui"
-  ],
-  "homepage": "https://ant.design",
-  "bugs": {
-    "url": "https://github.com/ant-design/ant-design/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ant-design/ant-design"
-  },
-  "license": "MIT",
-  "contributors": [
-    "ant"
   ],
   "funding": {
     "type": "opencollective",
@@ -290,8 +278,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "bundlesize": [
-    {
+  "bundlesize": [{
       "path": "./dist/antd.min.js",
       "maxSize": "275 kB"
     },

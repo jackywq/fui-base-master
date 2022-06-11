@@ -96,11 +96,23 @@ module.exports = {
 
     alertBabelConfig(config.module.rules);
 
-    config.module.rules.push({
-      test: /\.mjs$/,
-      include: /node_modules/,
-      type: 'javascript/auto',
-    });
+    config.module.rules = [
+        ...config.module.rules,
+        {
+            test: /\.mjs$/,
+            include: /node_modules/,
+            type: 'javascript/auto',
+        },
+        {
+            test: /\.(png|jpe?g|gif|ico|woff|woff2|eot|ttf|otf)$/,
+            loader: 'file-loader',
+            options: {
+                outputPath: 'public/images/',
+                name: '[name].[hash:8].[ext]',
+            },
+            include: /site/,
+        },
+    ];
 
     config.plugins.push(
       new webpack.DefinePlugin({

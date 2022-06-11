@@ -77,7 +77,7 @@ export default function Logo() {
         src="https://gw.alipayobjects.com/zos/antfincdn/6UYtAUYPXE/AntDesign.svg"
         className="home-banner-normal"
       />
-      <Hitu
+      {/* <Hitu
         ref={hituRef}
         width={64}
         height={64}
@@ -108,7 +108,7 @@ export default function Logo() {
             ],
           },
         ]}
-      />
+      /> */}
     </div>
   );
 }

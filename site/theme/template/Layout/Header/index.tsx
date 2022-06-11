@@ -1,14 +1,14 @@
 import React from 'react';
-import { FormattedMessage, injectIntl } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import { UnorderedListOutlined } from '@ant-design/icons';
-import { Select, Row, Col, Popover, Button } from 'antd';
+import { Select, Row, Col, Popover } from 'antd';
 import canUseDom from 'rc-util/lib/Dom/canUseDom';
 import * as utils from '../../utils';
 import packageJson from '../../../../../package.json';
 import Logo from './Logo';
 import SearchBar from './SearchBar';
-import More from './More';
+// import More from './More';
 import Navigation from './Navigation';
 import Github from './Github';
 import SiteContext from '../SiteContext';
@@ -214,13 +214,13 @@ class Header extends React.Component<HeaderProps, HeaderState> {
           const { direction } = this.context;
           const {
             location,
-            themeConfig,
+            // themeConfig,
             intl: { locale },
             router,
           } = this.props;
           const docVersions: Record<string, string> = {
             [antdVersion]: antdVersion,
-            ...themeConfig.docVersions,
+            // ...themeConfig.docVersions,
           };
           const versionOptions = Object.keys(docVersions).map(version => (
             <Option value={docVersions[version]} key={version}>
@@ -279,23 +279,23 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             >
               {versionOptions}
             </Select>,
-            <Button
-              size="small"
-              onClick={this.onLangChange}
-              className="header-button header-lang-button"
-              key="lang-button"
-            >
-              <FormattedMessage id="app.header.lang" />
-            </Button>,
-            <Button
-              size="small"
-              onClick={this.onDirectionChange}
-              className="header-button header-direction-button"
-              key="direction-button"
-            >
-              {this.getNextDirectionText()}
-            </Button>,
-            <More key="more" {...sharedProps} />,
+            // <Button
+            //   size="small"
+            //   onClick={this.onLangChange}
+            //   className="header-button header-lang-button"
+            //   key="lang-button"
+            // >
+            //   <FormattedMessage id="app.header.lang" />
+            // </Button>,
+            // <Button
+            //   size="small"
+            //   onClick={this.onDirectionChange}
+            //   className="header-button header-direction-button"
+            //   key="direction-button"
+            // >
+            //   {this.getNextDirectionText()}
+            // </Button>,
+            // <More key="more" {...sharedProps} />,
             <Github key="github" responsive={responsive} />,
           ];
 

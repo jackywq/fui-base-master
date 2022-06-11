@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Row, Col, Typography, Card } from 'antd';
+import { Row, Col, Card } from 'antd';
 import { RightOutlined, LeftOutlined } from '@ant-design/icons';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Link } from 'bisheng/router';
@@ -10,8 +10,6 @@ import Meaningful from './Meaningful';
 import Growth from './Growth';
 import Natural from './Natural';
 import SiteContext from '../../Layout/SiteContext';
-
-const { Title } = Typography;
 
 interface PanelProps {
   img: string;
@@ -107,7 +105,7 @@ const DesignPage = (props: { location: any }) => {
     IconComponent = <LeftOutlined className="home-link-arrow home-link-arrow-rtl" />;
   }
 
-  const smallStyle = { fontSize: 12, color: '#888', marginLeft: '0.3em' };
+  //   const smallStyle = { fontSize: 12, color: '#888', marginLeft: '0.3em' };
 
   return (
     <div style={{ marginBottom: -28 }}>
