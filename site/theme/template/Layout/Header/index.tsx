@@ -296,7 +296,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             //   {this.getNextDirectionText()}
             // </Button>,
             // <More key="more" {...sharedProps} />,
-            <Github key="github" responsive={responsive} />,
+            // <Github key="github" responsive={responsive} />,
           ];
 
           if (windowWidth < RESPONSIVE_XS) {

@@ -76,11 +76,11 @@ export default ({
       id="nav"
       disabledOverflow
     >
-      <Menu.Item key="docs/spec">
+      {/* <Menu.Item key="docs/spec">
         <Link to={utils.getLocalizedPathname('/docs/spec/introduce', isZhCN, location.query)}>
           <FormattedMessage id="app.header.menu.spec" />
         </Link>
-      </Menu.Item>
+      </Menu.Item> */}
       <Menu.Item key="docs/react">
         <Link to={utils.getLocalizedPathname('/docs/react/introduce', isZhCN, location.query)}>
           <FormattedMessage id="app.header.menu.documentation" />

@@ -97,23 +97,45 @@ module.exports = {
     alertBabelConfig(config.module.rules);
 
     config.module.rules = [
-        ...config.module.rules,
-        {
-            test: /\.mjs$/,
-            include: /node_modules/,
-            type: 'javascript/auto',
-        },
-        {
-            test: /\.(png|jpe?g|gif|ico|woff|woff2|eot|ttf|otf)$/,
-            loader: 'file-loader',
+      // 移除原有针对图片的loader打包方式
+      ...config.module.rules.filter(rule => {
+        if (rule.test instanceof RegExp) {
+          return !rule.test.test('.png');
+        }
+        return true;
+      }),
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto',
+      },
+      {
+        test: /\.(png|jpe?g|gif|ico|woff|woff2|eot|ttf|otf)$/,
+        type: 'javascript/auto',
+        use: [
+          {
+            loader: 'url-loader',
             options: {
-                outputPath: 'public/images/',
-                name: '[name].[hash:8].[ext]',
+              publicPath: './image', // 相对打包后的index.html的图片位置
+              outputPath: 'image/', // 输出到build的目录image下
+              // 图片小于 10kb,会被 base64处理
+              limit: 10 * 1024,
+              // 解决：关闭url-loader的es6模块化，使用commonjs解析
+              esModule: false,
+              // 给图片重命名
+              name: '[name].[hash:6][ext]',
             },
-            include: /site/,
-        },
+          },
+        ],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-withimg-loader',
+      },
     ];
 
+    console.info(config.module.rules);
     config.plugins.push(
       new webpack.DefinePlugin({
         antdReproduceVersion: JSON.stringify(version),

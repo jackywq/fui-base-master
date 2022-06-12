@@ -104,6 +104,7 @@
     "array-tree-filter": "^2.1.0",
     "classnames": "^2.2.6",
     "copy-to-clipboard": "^3.2.0",
+    "file-loader": "^6.2.0",
     "lodash": "^4.17.21",
     "moment": "^2.25.3",
     "rc-cascader": "~2.1.0",
@@ -278,7 +279,8 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "bundlesize": [{
+  "bundlesize": [
+    {
       "path": "./dist/antd.min.js",
       "maxSize": "275 kB"
     },

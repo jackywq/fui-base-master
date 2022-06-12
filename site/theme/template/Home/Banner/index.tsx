@@ -1,12 +1,12 @@
-import * as React from 'react';
+import { PlayCircleFilled } from '@ant-design/icons';
 import { Button } from 'antd';
 import { Link } from 'bisheng/router';
+import * as React from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { PlayCircleFilled } from '@ant-design/icons';
+// import { Bg } from 'site/assets/images/index';
 import { getLocalizedPathname } from '../../utils';
-import Logo from './Logo';
-
 import './index.less';
+import Logo from './Logo';
 
 const Banner = (props: { location: any }) => {
   const { location } = props;
@@ -18,6 +18,7 @@ const Banner = (props: { location: any }) => {
       <div className="home-banner-holder">
         <div className="home-banner-content">
           <div>
+            {/* <img src={Bg} alt="" /> */}
             <Logo />
           </div>
           <p>

@@ -136,7 +136,7 @@ const SearchBar = ({
         />
       </Helmet>
 
-      <Input
+      {/* <Input
         placeholder={searchInputPlaceholder}
         onTouchStart={triggerSearchModalImport}
         onMouseOver={triggerSearchModalImport}
@@ -172,7 +172,7 @@ const SearchBar = ({
             </Tooltip>
           )
         }
-      />
+      /> */}
 
       {SearchModal &&
         searchModalContainer &&
